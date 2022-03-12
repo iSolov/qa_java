@@ -4,10 +4,10 @@ import java.util.List;
 
 public class Animal {
 
-    public List<String> getFood(String animalKind) throws Exception {
-        if ("Травоядное".equals(animalKind)) {
+    public List<String> getFood(AnimalKind animalKind) throws Exception {
+        if (animalKind.equals(AnimalKind.Herbivore)) {
             return List.of("Трава", "Различные растения");
-        } else if ("Хищник".equals(animalKind)) {
+        } else if (animalKind.equals(AnimalKind.Predator)) {
             return List.of("Животные", "Птицы", "Рыба");
         } else {
             throw new Exception("Неизвестный вид животного, используйте значение Травоядное или Хищник");

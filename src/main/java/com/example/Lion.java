@@ -2,24 +2,21 @@ package com.example;
 
 import java.util.List;
 
-public class Lion {
+/**
+ * Описание льва. Лев всегда из семейства кошачьих.
+ */
+public class Lion extends Feline {
 
     boolean hasMane;
 
-    public Lion(String sex) throws Exception {
-        if ("Самец".equals(sex)) {
+    public Lion(SexKind sex) throws Exception {
+        if (sex.equals(SexKind.Male)) {
             hasMane = true;
-        } else if ("Самка".equals(sex)) {
+        } else if (sex.equals(SexKind.Female)) {
             hasMane = false;
         } else {
-            throw new Exception("Используйте допустимые значения пола животного - самей или самка");
+            throw new Exception("Используйте допустимые значения пола животного - Самец или Самка");
         }
-    }
-
-    Feline feline = new Feline();
-
-    public int getKittens() {
-        return feline.getKittens();
     }
 
     public boolean doesHaveMane() {
@@ -27,6 +24,6 @@ public class Lion {
     }
 
     public List<String> getFood() throws Exception {
-        return feline.getFood("Хищник");
+        return getFood(animalKind);
     }
 }
