@@ -6,21 +6,22 @@ import org.junit.runners.Parameterized;
 
 @RunWith(Parameterized.class)
 public class FelineTest {
+
     int kittensCount;
     Object expectedKittensCount;
 
-    public FelineTest(int kittensCount, Object expectedKittensCount){
+    public FelineTest(int kittensCount, Object expectedKittensCount) {
         this.kittensCount = kittensCount;
         this.expectedKittensCount = expectedKittensCount;
     }
 
     @Parameterized.Parameters
     public static Object[][] getKittensCountData() {
-        return new Object[][] {
-            { 0, 0},
-            { 1, 1},
-            { 100, 100 },
-            { -1, Exception.class }
+        return new Object[][]{
+            {0, 0},
+            {1, 1},
+            {100, 100},
+            {-1, Exception.class}
         };
     }
 
@@ -28,10 +29,11 @@ public class FelineTest {
     public void shouldFelineReturnKittens() {
         try {
             Object resultKittensCount = new Feline().getKittens(kittensCount);
-            Assert.assertEquals("Количество котят вернуло неверное значение.", expectedKittensCount, resultKittensCount);
-        }
-        catch (Exception ex){
-            Assert.assertEquals("Неправильное количество котят должно выдать ошибку.", expectedKittensCount, ex.getClass());
+            Assert.assertEquals("Количество котят вернуло неверное значение.", expectedKittensCount,
+                resultKittensCount);
+        } catch (Exception ex) {
+            Assert.assertEquals("Неправильное количество котят должно выдать ошибку.",
+                expectedKittensCount, ex.getClass());
         }
     }
 

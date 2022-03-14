@@ -52,8 +52,7 @@ public class AnimalTest {
 
         try {
             new Animal().getFood(AnimalKind.Unknown);
-        }
-        catch(Exception exception) {
+        } catch (Exception exception) {
             errorMessage = exception.getMessage();
         }
 

@@ -6,7 +6,7 @@ public class Feline extends Animal implements Predator {
 
     public static final String FELINE_FAMILY = "Кошачьи";
 
-    public AnimalKind animalKind(){
+    public AnimalKind animalKind() {
         return animalKind;
     }
 
@@ -20,8 +20,8 @@ public class Feline extends Animal implements Predator {
         return FELINE_FAMILY;
     }
 
-    public int getKittens(int kittensCount) throws Exception  {
-        if(kittensCount >= 0){
+    public int getKittens(int kittensCount) throws Exception {
+        if (kittensCount >= 0) {
             return kittensCount;
         } else {
             throw new Exception("Неправильное количество котят.");

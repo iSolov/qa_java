@@ -10,7 +10,8 @@ public class Animal {
         } else if (animalKind.equals(AnimalKind.Predator)) {
             return List.of("Животные", "Птицы", "Рыба");
         } else {
-            throw new Exception("Неизвестный вид животного, используйте значение Травоядное или Хищник");
+            throw new Exception(
+                "Неизвестный вид животного, используйте значение Травоядное или Хищник");
         }
     }
 

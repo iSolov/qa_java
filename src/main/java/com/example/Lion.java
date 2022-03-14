@@ -6,6 +6,7 @@ import java.util.List;
  * Описание льва. Лев всегда из семейства кошачьих.
  */
 public class Lion {
+
     boolean hasMane;
     Feline feline;
 
