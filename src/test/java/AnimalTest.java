@@ -46,9 +46,22 @@ public class AnimalTest {
     /**
      * Должна быть ошибка, если список еды получается не для хищника и не для травоядного.
      */
-    @Test(expected = Exception.class)
-    public void shouldUnknownAnimalHasExceptionAboutFood() throws Exception {
-        new Animal().getFood(AnimalKind.Unknown);
+    @Test
+    public void shouldUnknownAnimalHasExceptionAboutFood() {
+        String errorMessage = null;
+
+        try {
+            new Animal().getFood(AnimalKind.Unknown);
+        }
+        catch(Exception exception) {
+            errorMessage = exception.getMessage();
+        }
+
+        Assert.assertNotEquals(
+            "Получение списка еды для неизвестного животного должно вызвать ошибку.",
+            null,
+            errorMessage
+        );
     }
 
 }
