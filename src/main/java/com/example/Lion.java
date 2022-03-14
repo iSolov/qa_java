@@ -5,11 +5,13 @@ import java.util.List;
 /**
  * Описание льва. Лев всегда из семейства кошачьих.
  */
-public class Lion extends Feline {
-
+public class Lion {
     boolean hasMane;
+    Feline feline;
 
-    public Lion(SexKind sex) throws Exception {
+    public Lion(SexKind sex, Feline feline) throws Exception {
+        this.feline = feline;
+
         if (sex.equals(SexKind.Male)) {
             hasMane = true;
         } else if (sex.equals(SexKind.Female)) {
@@ -19,11 +21,15 @@ public class Lion extends Feline {
         }
     }
 
-    public boolean doesHaveMane() {
-        return hasMane;
+    public List<String> eatMeat() throws Exception {
+        return feline.eatMeat();
     }
 
-    public List<String> getFood() throws Exception {
-        return getFood(animalKind);
+    public int getKittens(int kittensCount) throws Exception {
+        return feline.getKittens(kittensCount);
+    }
+
+    public boolean doesHaveMane() {
+        return hasMane;
     }
 }

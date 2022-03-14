@@ -1,3 +1,4 @@
+import com.example.Feline;
 import com.example.Lion;
 import com.example.SexKind;
 import org.junit.Assert;
@@ -12,7 +13,7 @@ public class LionTest {
     public void shouldMaleLionHasMane() throws Exception {
         Assert.assertTrue(
             "Лев должен иметь гриву.",
-            new Lion(SexKind.Male).doesHaveMane()
+            new Lion(SexKind.Male, new Feline()).doesHaveMane()
         );
     }
 
@@ -23,7 +24,7 @@ public class LionTest {
     public void shouldFemaleLionHasNoMane() throws Exception {
         Assert.assertFalse(
             "Львица не должна иметь гриву.",
-            new Lion(SexKind.Female).doesHaveMane()
+            new Lion(SexKind.Female, new Feline()).doesHaveMane()
         );
     }
 
@@ -32,7 +33,7 @@ public class LionTest {
      */
     @Test(expected = Exception.class)
     public void shouldLionWithIncorrectSexHasError() throws Exception {
-        new Lion(SexKind.Unknown);
+        new Lion(SexKind.Unknown, new Feline());
     }
 
     /**
@@ -42,7 +43,7 @@ public class LionTest {
     public void shouldLionHasFood() throws Exception {
         Assert.assertTrue(
             "У льва должен быть список еды.",
-            new Lion(SexKind.Male).getFood().size() > 0
+            new Lion(SexKind.Male, new Feline()).eatMeat().size() > 0
         );
     }
 }
