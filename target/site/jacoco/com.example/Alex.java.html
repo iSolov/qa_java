@@ -5,11 +5,11 @@ import java.util.List;
 public class Alex extends Lion {
 
     public Alex() throws Exception {
-<span class="fc" id="L8">        super(SexKind.Male);</span>
+<span class="fc" id="L8">        super(SexKind.Male, new Feline());</span>
 <span class="fc" id="L9">    }</span>
 
     public int getKittens() throws Exception {
-<span class="fc" id="L12">        return getKittens(0);</span>
+<span class="fc" id="L12">        return super.getKittens(0);</span>
     }
 
     public List&lt;String&gt; getFriends() {
